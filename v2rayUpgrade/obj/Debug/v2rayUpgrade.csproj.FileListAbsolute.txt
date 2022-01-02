@@ -1,0 +1,10 @@
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\bin\Debug\v2rayUpgrade.exe.config
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\bin\Debug\v2rayUpgrade.exe
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\bin\Debug\v2rayUpgrade.pdb
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\obj\Debug\v2rayUpgrade.csproj.AssemblyReference.cache
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\obj\Debug\v2rayUpgrade.MainForm.resources
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\obj\Debug\v2rayUpgrade.Properties.Resources.resources
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\obj\Debug\v2rayUpgrade.csproj.GenerateResource.cache
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\obj\Debug\v2rayUpgrade.csproj.CoreCompileInputs.cache
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\obj\Debug\v2rayUpgrade.exe
+C:\Users\omidR\Desktop\v2rayN\v2rayUpgrade\obj\Debug\v2rayUpgrade.pdb

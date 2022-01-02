@@ -1,0 +1,2 @@
+obj\Release\Protos/Statistics.cs \
+obj\Release\Protos/StatisticsGrpc.cs: Protos/Statistics.proto
