@@ -41,18 +41,18 @@ namespace v2rayN.Forms
                 Utils.SaveLog($"Loading custom icon failed: {e.Message}");
             }
         }
-
-        public static int counttheme=0;
+         public static int counttheme=0;
         private void BaseForm_Load(object sender, EventArgs e)
         {
            
             if (counttheme<=0)
             {
                 SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                MaterialSkinManager.Instance.ColorScheme = new ColorScheme(Color.Tomato, Color.Tomato,
-                    Color.GreenYellow, Color.Chocolate, TextShade.WHITE);
+                SkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.Pink900,
+                    Accent.Blue700, TextShade.WHITE);
             }
-         counttheme++;
+            Load += BaseForm_Load;
+counttheme++;
 
         }
     }

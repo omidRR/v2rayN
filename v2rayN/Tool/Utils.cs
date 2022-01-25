@@ -180,6 +180,10 @@ namespace v2rayN
         {
             try
             {
+                if (lst == null)
+                {
+                    return string.Empty;
+                }
                 if (wrap)
                 {
                     return string.Join("," + Environment.NewLine, lst.ToArray());
@@ -349,7 +353,7 @@ namespace v2rayN
             return $"{string.Format("{0:f1}", result)} {unit}";
         }
 
-        
+
 
         public static string UrlEncode(string url)
         {
@@ -627,6 +631,26 @@ namespace v2rayN
                 regKey?.Close();
             }
         }
+
+        /// <summary>
+        /// 判断.Net Framework的Release是否符合
+        /// (.Net Framework 版本在4.0及以上)
+        /// </summary>
+        /// <param name="release">需要的版本4.6.2=394802;4.8=528040</param>
+        /// <returns></returns>
+        public static bool GetDotNetRelease(int release)
+        {
+            const string subkey = @"SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\";
+            using (RegistryKey ndpKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32).OpenSubKey(subkey))
+            {
+                if (ndpKey != null && ndpKey.GetValue("Release") != null)
+                {
+                    return (int)ndpKey.GetValue("Release") >= release ? true : false;
+                }
+                return false;
+            }
+        }
+
         #endregion
 
         #region 测速
@@ -693,12 +717,44 @@ namespace v2rayN
 
         public static void SetSecurityProtocol()
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3
-                                       | SecurityProtocolType.Tls
-                                       | SecurityProtocolType.Tls11
-                                       | SecurityProtocolType.Tls12
-                                       | SecurityProtocolType.Tls13;
+            string securityProtocolTls13 = RegReadValue(Global.MyRegPath, Global.MyRegKeySecurityProtocolTls13, "0");
+
+            if (securityProtocolTls13.Equals("1"))
+            {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3
+                                           | SecurityProtocolType.Tls
+                                           | SecurityProtocolType.Tls11
+                                           | SecurityProtocolType.Tls12
+                                           | SecurityProtocolType.Tls13;
+            }
+            else
+            {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3
+                                           | SecurityProtocolType.Tls
+                                           | SecurityProtocolType.Tls11
+                                           | SecurityProtocolType.Tls12;
+            }
             ServicePointManager.DefaultConnectionLimit = 256;
+        }
+
+        public static bool PortInUse(int port)
+        {
+            bool inUse = false;
+
+            IPGlobalProperties ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+            IPEndPoint[] ipEndPoints = ipProperties.GetActiveTcpListeners();
+
+            var lstIpEndPoints = new List<IPEndPoint>(IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners());
+
+            foreach (IPEndPoint endPoint in ipEndPoints)
+            {
+                if (endPoint.Port == port)
+                {
+                    inUse = true;
+                    break;
+                }
+            }
+            return inUse;
         }
         #endregion
 
@@ -878,7 +934,7 @@ namespace v2rayN
         {
             var logger = LogManager.GetLogger("Log2");
             logger.Debug(strTitle);
-            logger.Debug(ex);          
+            logger.Debug(ex);
         }
 
         #endregion

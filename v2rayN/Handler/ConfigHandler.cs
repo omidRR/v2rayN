@@ -128,18 +128,22 @@ namespace v2rayN.Handler
                 config.uiItem.mainLvColWidth = new Dictionary<string, int>();
             }
 
-            //// 如果是用户升级，首次会有端口号为0的情况，不可用，这里处理
-            //if (config.pacPort == 0)
-            //{
-            //    config.pacPort = 8888;
-            //}
-            if (Utils.IsNullOrEmpty(config.speedTestUrl))
+
+            if (config.constItem == null)
             {
-                config.speedTestUrl = Global.SpeedTestUrl;
+                config.constItem = new ConstItem();
             }
-            if (Utils.IsNullOrEmpty(config.speedPingTestUrl))
+            if (Utils.IsNullOrEmpty(config.constItem.speedTestUrl))
             {
-                config.speedPingTestUrl = Global.SpeedPingTestUrl;
+                config.constItem.speedTestUrl = Global.SpeedTestUrl;
+            }
+            if (Utils.IsNullOrEmpty(config.constItem.speedPingTestUrl))
+            {
+                config.constItem.speedPingTestUrl = Global.SpeedPingTestUrl;
+            }
+            if (Utils.IsNullOrEmpty(config.constItem.defIEProxyExceptions))
+            {
+                config.constItem.defIEProxyExceptions = Global.IEProxyExceptions;
             }
             //if (Utils.IsNullOrEmpty(config.remoteDNS))
             //{
@@ -293,7 +297,6 @@ namespace v2rayN.Handler
                 address = config.vmess[index].address,
                 port = config.vmess[index].port,
                 id = config.vmess[index].id,
-                alterId = config.vmess[index].alterId,
                 security = config.vmess[index].security,
                 network = config.vmess[index].network,
                 remarks = string.Format("{0}-clone", config.vmess[index].remarks),
@@ -910,6 +913,7 @@ namespace v2rayN.Handler
                 case EServerColName.port:
                 case EServerColName.security:
                 case EServerColName.network:
+                case EServerColName.streamSecurity:
                 case EServerColName.testResult:
                     propertyName = name.ToString();
                     break;
@@ -1011,7 +1015,6 @@ namespace v2rayN.Handler
                     o.address == n.address &&
                     o.port == n.port &&
                     o.id == n.id &&
-                    o.alterId == n.alterId &&
                     o.security == n.security &&
                     o.network == n.network &&
                     o.headerType == n.headerType &&

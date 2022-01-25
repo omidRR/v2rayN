@@ -21,7 +21,6 @@ namespace v2rayN
         /// </summary>
         public const string SpeedTestUrl = @"http://cachefly.cachefly.net/10mb.test";
         public const string SpeedPingTestUrl = @"https://www.google.com/generate_204";
-        public const string AvailabilityTestUrl = @"https://www.google.com/generate_204";
 
         /// <summary>
         /// CustomRoutingListUrl
@@ -176,6 +175,10 @@ namespace v2rayN
         /// Language
         /// </summary>
         public const string MyRegKeyLanguage = "CurrentLanguage";
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string MyRegKeySecurityProtocolTls13 = "SecurityProtocolTls13";
         /// <summary>
         /// Icon
         /// </summary>

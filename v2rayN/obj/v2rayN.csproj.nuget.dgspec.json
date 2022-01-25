@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.me\\v2rayN\\v2rayN.csproj": {}
+    "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\v2rayN.csproj": {}
   },
   "projects": {
-    "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.me\\v2rayN\\v2rayN.csproj": {
+    "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\v2rayN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.me\\v2rayN\\v2rayN.csproj",
+        "projectUniqueName": "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\v2rayN.csproj",
         "projectName": "v2rayN",
-        "projectPath": "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.me\\v2rayN\\v2rayN.csproj",
+        "projectPath": "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\v2rayN.csproj",
         "packagesPath": "C:\\Users\\omidR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.me\\v2rayN\\obj\\",
+        "outputPath": "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -42,17 +42,17 @@
           "dependencies": {
             "Google.Protobuf": {
               "target": "Package",
-              "version": "[3.19.1, )"
+              "version": "[3.19.3, )"
             },
             "Grpc.Core": {
               "target": "Package",
-              "version": "[2.43.0-pre1, )"
+              "version": "[2.43.0, )"
             },
             "Grpc.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.43.0-pre1, )"
+              "version": "[2.43.0, )"
             },
             "MaterialSkin.2": {
               "target": "Package",

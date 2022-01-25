@@ -156,9 +156,6 @@
   <data name="FailedReadConfiguration" xml:space="preserve">
     <value>读取配置文件失败</value>
   </data>
-  <data name="FillCorrectAlterId" xml:space="preserve">
-    <value>请填写正确格式额外ID</value>
-  </data>
   <data name="FillCorrectServerPort" xml:space="preserve">
     <value>请填写正确格式服务器端口</value>
   </data>
@@ -435,5 +432,8 @@
   </data>
   <data name="TransportHeaderTypeTip4" xml:space="preserve">
     <value>*grpc 模式</value>
+  </data>
+  <data name="LvTLS" xml:space="preserve">
+    <value>传输层安全</value>
   </data>
 </root>
