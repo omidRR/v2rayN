@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using v2rayN.Mode;
 
@@ -42,17 +41,6 @@ namespace v2rayN.Forms
             cmbStreamSecurity.Text = vmessItem.streamSecurity;
             cmbAllowInsecure.Text = vmessItem.allowInsecure;
             txtSNI.Text = vmessItem.sni;
-
-            if (vmessItem.alpn != null)
-            {
-                for (int i = 0; i < clbAlpn.Items.Count; i++)
-                {
-                    if (vmessItem.alpn.Contains(clbAlpn.Items[i].ToString()))
-                    {
-                        clbAlpn.SetItemChecked(i, true);
-                    }
-                }
-            }
         }
 
         public void ClearServer(VmessItem item)
@@ -66,10 +54,6 @@ namespace v2rayN.Forms
             cmbAllowInsecure.Text = "";
             txtPath.Text = "";
             txtSNI.Text = "";
-            for (int i = 0; i < clbAlpn.Items.Count; i++)
-            {
-                clbAlpn.SetItemChecked(i, false);
-            }
         }
 
         public void EndBindingServer()
@@ -89,16 +73,6 @@ namespace v2rayN.Forms
             vmessItem.streamSecurity = streamSecurity;
             vmessItem.allowInsecure = allowInsecure;
             vmessItem.sni = sni;
-
-            var alpn = new List<string>();
-            for (int i = 0; i < clbAlpn.Items.Count; i++)
-            {
-                if (clbAlpn.GetItemChecked(i))
-                {
-                    alpn.Add(clbAlpn.Items[i].ToString());
-                }
-            }
-            vmessItem.alpn = alpn;
         }
 
         private void cmbNetwork_SelectedIndexChanged(object sender, EventArgs e)

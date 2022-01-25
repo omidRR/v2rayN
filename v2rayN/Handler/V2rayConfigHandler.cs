@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.NetworkInformation;
 using v2rayN.Mode;
 
 namespace v2rayN.Handler
@@ -363,6 +361,7 @@ namespace v2rayN.Handler
                     }
                     //远程服务器用户ID
                     usersItem.id = config.id();
+                    usersItem.alterId = config.alterId();
                     usersItem.email = Global.userEMail;
                     usersItem.security = config.security();
 
@@ -478,6 +477,7 @@ namespace v2rayN.Handler
                     }
                     //远程服务器用户ID
                     usersItem.id = config.id();
+                    usersItem.alterId = 0;
                     usersItem.flow = string.Empty;
                     usersItem.email = Global.userEMail;
                     usersItem.encryption = config.security();
@@ -529,7 +529,7 @@ namespace v2rayN.Handler
 
                     serversItem.ota = false;
                     serversItem.level = 1;
-
+                          
                     //if xtls
                     if (config.streamSecurity() == Global.StreamSecurityX)
                     {
@@ -587,8 +587,7 @@ namespace v2rayN.Handler
 
                     TlsSettings tlsSettings = new TlsSettings
                     {
-                        allowInsecure = config.allowInsecure(),
-                        alpn = config.alpn()
+                        allowInsecure = config.allowInsecure()
                     };
                     if (!string.IsNullOrWhiteSpace(sni))
                     {
@@ -608,8 +607,7 @@ namespace v2rayN.Handler
 
                     TlsSettings xtlsSettings = new TlsSettings
                     {
-                        allowInsecure = config.allowInsecure(),
-                        alpn = config.alpn()
+                        allowInsecure = config.allowInsecure()
                     };
                     if (!string.IsNullOrWhiteSpace(sni))
                     {
@@ -1023,11 +1021,13 @@ namespace v2rayN.Handler
                 if (config.configType() == (int)EConfigType.Vmess)
                 {
                     inbound.protocol = Global.vmessProtocolLite;
+                    usersItem.alterId = config.alterId();
 
                 }
                 else if (config.configType() == (int)EConfigType.VLESS)
                 {
                     inbound.protocol = Global.vlessProtocolLite;
+                    usersItem.alterId = 0;
                     usersItem.flow = config.flow();
                     inbound.settings.decryption = config.security();
                 }
@@ -1122,6 +1122,7 @@ namespace v2rayN.Handler
                 vmessItem.address = outbound.settings.vnext[0].address;
                 vmessItem.port = outbound.settings.vnext[0].port;
                 vmessItem.id = outbound.settings.vnext[0].users[0].id;
+                vmessItem.alterId = outbound.settings.vnext[0].users[0].alterId;
                 vmessItem.remarks = string.Format("import@{0}", DateTime.Now.ToShortDateString());
 
                 //tcp or kcp
@@ -1265,6 +1266,7 @@ namespace v2rayN.Handler
                 vmessItem.address = string.Empty;
                 vmessItem.port = inbound.port;
                 vmessItem.id = inbound.settings.clients[0].id;
+                vmessItem.alterId = inbound.settings.clients[0].alterId;
 
                 vmessItem.remarks = string.Format("import@{0}", DateTime.Now.ToShortDateString());
 
@@ -1414,12 +1416,6 @@ namespace v2rayN.Handler
                     msg = UIRes.I18N("FailedGenDefaultConfiguration");
                     return "";
                 }
-                List<IPEndPoint> lstIpEndPoints = null;
-                try
-                {
-                    lstIpEndPoints = new List<IPEndPoint>(IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners());
-                }
-                catch { }
 
                 log(configCopy, ref v2rayConfig, false);
                 //routing(config, ref v2rayConfig);
@@ -1428,7 +1424,6 @@ namespace v2rayN.Handler
                 v2rayConfig.inbounds.Clear(); // Remove "proxy" service for speedtest, avoiding port conflicts.
 
                 int httpPort = configCopy.GetLocalPort("speedtest");
-
                 foreach (int index in selecteds)
                 {
                     if (configCopy.vmess[index].configType == (int)EConfigType.Custom)
@@ -1437,18 +1432,11 @@ namespace v2rayN.Handler
                     }
 
                     configCopy.index = index;
-                    var port = httpPort + index;
-
-                    //Port In Used
-                    if (lstIpEndPoints != null && lstIpEndPoints.FindIndex(_it => _it.Port == port) >= 0)
-                    {
-                        continue;
-                    }
 
                     Inbounds inbound = new Inbounds
                     {
                         listen = Global.Loopback,
-                        port = port,
+                        port = httpPort + index,
                         protocol = Global.InboundHttp
                     };
                     inbound.tag = Global.InboundHttp + inbound.port.ToString();

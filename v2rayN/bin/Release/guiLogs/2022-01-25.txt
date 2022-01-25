@@ -1,0 +1,5 @@
+2022-01-25 13:32:59,408 [1] INFO  Log1 - v2rayN start up | v2rayN - V4.27 - 1400/11/05 | C:\Users\omidR\Desktop\v2rayN.edited.by.omidrr\v2rayN\bin\Release\v2rayN.exe
+2022-01-25 13:33:00,414 [3] INFO  Log1 - UpdateTaskRun
+2022-01-25 15:14:44,962 [1] INFO  Log1 - v2rayN start up | v2rayN - V4.27 - 1400/11/05 | C:\Users\omidR\Desktop\v2rayN.edited.by.omidrr\v2rayN\bin\Release\v2rayN.exe
+2022-01-25 15:14:47,035 [3] INFO  Log1 - UpdateTaskRun
+2022-01-25 15:15:47,047 [3] INFO  Log1 - UpdateTaskRun

@@ -332,10 +332,5 @@ namespace v2rayN.Forms
         {
             System.Diagnostics.Process.Start("https://www.v2fly.org/config/dns.html#dnsobject");
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -185,16 +185,15 @@ namespace v2rayN.Handler
 
         public void BackupGuiNConfig(Config config, bool auto = false)
         {
-            string fileName = $"guiNConfig_{DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss_fff")}.json";
+            string fileName = string.Empty;
             if (auto)
             {
-                fileName = Utils.GetTempPath(fileName);
+                fileName = Utils.GetTempPath($"guiNConfig{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.json");
             }
             else
             {
                 SaveFileDialog fileDialog = new SaveFileDialog
                 {
-                    FileName = fileName,
                     Filter = "guiNConfig|*.json",
                     FilterIndex = 2,
                     RestoreDirectory = true

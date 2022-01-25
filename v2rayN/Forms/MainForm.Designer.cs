@@ -32,24 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.lvServers = new MaterialSkin.Controls.MaterialListView();
-            this.qrCodeControl = new v2rayN.Forms.QRCodeControl();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gbMsgTitle = new System.Windows.Forms.GroupBox();
-            this.txtMsgBox = new System.Windows.Forms.TextBox();
-            this.cmsMsgBox = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuMsgBoxSelectAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMsgBoxCopy = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMsgBoxCopyAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMsgBoxAddRoutingRule = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMsgBoxFilter = new System.Windows.Forms.ToolStripMenuItem();
-            this.ssMain = new System.Windows.Forms.StatusStrip();
-            this.toolSslInboundInfo = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolSslBlank1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolSslRoutingRule = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolSslBlank2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolSslServerSpeed = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolSslBlank4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.cmsLv = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuAddVmessServer = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAddVlessServer = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +65,24 @@
             this.menuExport2ShareUrl = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExport2SubContent = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbServer = new System.Windows.Forms.ToolStripDropDownButton();
+            this.qrCodeControl = new v2rayN.Forms.QRCodeControl();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbMsgTitle = new System.Windows.Forms.GroupBox();
+            this.txtMsgBox = new System.Windows.Forms.TextBox();
+            this.cmsMsgBox = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuMsgBoxSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMsgBoxCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMsgBoxCopyAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMsgBoxAddRoutingRule = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMsgBoxFilter = new System.Windows.Forms.ToolStripMenuItem();
+            this.ssMain = new System.Windows.Forms.StatusStrip();
+            this.toolSslInboundInfo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolSslBlank1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolSslRoutingRule = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolSslBlank2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolSslServerSpeed = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolSslBlank4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.notifyMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuSysAgentMode = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,12 +132,13 @@
             this.tsbPromotion = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
-            this.materialDrawer1 = new MaterialSkin.Controls.MaterialDrawer();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
+            this.cmsLv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -146,9 +147,9 @@
             this.gbMsgTitle.SuspendLayout();
             this.cmsMsgBox.SuspendLayout();
             this.ssMain.SuspendLayout();
-            this.cmsLv.SuspendLayout();
             this.cmsMain.SuspendLayout();
             this.tsMain.SuspendLayout();
+            this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -179,178 +180,27 @@
             this.lvServers.AutoSizeTable = false;
             this.lvServers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lvServers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvServers.ContextMenuStrip = this.cmsLv;
             this.lvServers.Depth = 0;
             resources.ApplyResources(this.lvServers, "lvServers");
             this.lvServers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lvServers.FullRowSelect = true;
+            this.lvServers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvServers.HideSelection = false;
             this.lvServers.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvServers.Items")))});
             this.lvServers.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvServers.MouseState = MaterialSkin.MouseState.OUT;
+            this.lvServers.MultiSelect = false;
             this.lvServers.Name = "lvServers";
             this.lvServers.OwnerDraw = true;
             this.lvServers.UseCompatibleStateImageBehavior = false;
             this.lvServers.View = System.Windows.Forms.View.Details;
             this.lvServers.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvServers_ColumnClick);
+            this.lvServers.SelectedIndexChanged += new System.EventHandler(this.lvServers_SelectedIndexChanged);
             this.lvServers.Click += new System.EventHandler(this.lvServers_Click);
             this.lvServers.DoubleClick += new System.EventHandler(this.lvServers_DoubleClick);
             this.lvServers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvServers_KeyDown);
-            // 
-            // qrCodeControl
-            // 
-            this.qrCodeControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            resources.ApplyResources(this.qrCodeControl, "qrCodeControl");
-            this.qrCodeControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.qrCodeControl.Name = "qrCodeControl";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
-            this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.splitContainer1.Panel2.Controls.Add(this.gbMsgTitle);
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
-            this.splitContainer1.Panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.groupBox1.Controls.Add(this.scMain);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // gbMsgTitle
-            // 
-            this.gbMsgTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.gbMsgTitle.Controls.Add(this.txtMsgBox);
-            this.gbMsgTitle.Controls.Add(this.ssMain);
-            resources.ApplyResources(this.gbMsgTitle, "gbMsgTitle");
-            this.gbMsgTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.gbMsgTitle.Name = "gbMsgTitle";
-            this.gbMsgTitle.TabStop = false;
-            // 
-            // txtMsgBox
-            // 
-            this.txtMsgBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.txtMsgBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMsgBox.ContextMenuStrip = this.cmsMsgBox;
-            resources.ApplyResources(this.txtMsgBox, "txtMsgBox");
-            this.txtMsgBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtMsgBox.Name = "txtMsgBox";
-            this.txtMsgBox.ReadOnly = true;
-            this.txtMsgBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMsgBox_KeyDown);
-            // 
-            // cmsMsgBox
-            // 
-            this.cmsMsgBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.cmsMsgBox.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmsMsgBox.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuMsgBoxSelectAll,
-            this.menuMsgBoxCopy,
-            this.menuMsgBoxCopyAll,
-            this.menuMsgBoxAddRoutingRule,
-            this.menuMsgBoxFilter});
-            this.cmsMsgBox.Name = "cmsMsgBox";
-            resources.ApplyResources(this.cmsMsgBox, "cmsMsgBox");
-            // 
-            // menuMsgBoxSelectAll
-            // 
-            this.menuMsgBoxSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.menuMsgBoxSelectAll.Name = "menuMsgBoxSelectAll";
-            resources.ApplyResources(this.menuMsgBoxSelectAll, "menuMsgBoxSelectAll");
-            this.menuMsgBoxSelectAll.Click += new System.EventHandler(this.menuMsgBoxSelectAll_Click);
-            // 
-            // menuMsgBoxCopy
-            // 
-            this.menuMsgBoxCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.menuMsgBoxCopy.Name = "menuMsgBoxCopy";
-            resources.ApplyResources(this.menuMsgBoxCopy, "menuMsgBoxCopy");
-            this.menuMsgBoxCopy.Click += new System.EventHandler(this.menuMsgBoxCopy_Click);
-            // 
-            // menuMsgBoxCopyAll
-            // 
-            this.menuMsgBoxCopyAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.menuMsgBoxCopyAll.Name = "menuMsgBoxCopyAll";
-            resources.ApplyResources(this.menuMsgBoxCopyAll, "menuMsgBoxCopyAll");
-            this.menuMsgBoxCopyAll.Click += new System.EventHandler(this.menuMsgBoxCopyAll_Click);
-            // 
-            // menuMsgBoxAddRoutingRule
-            // 
-            this.menuMsgBoxAddRoutingRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.menuMsgBoxAddRoutingRule.Name = "menuMsgBoxAddRoutingRule";
-            resources.ApplyResources(this.menuMsgBoxAddRoutingRule, "menuMsgBoxAddRoutingRule");
-            this.menuMsgBoxAddRoutingRule.Click += new System.EventHandler(this.menuMsgBoxAddRoutingRule_Click);
-            // 
-            // menuMsgBoxFilter
-            // 
-            this.menuMsgBoxFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.menuMsgBoxFilter.Name = "menuMsgBoxFilter";
-            resources.ApplyResources(this.menuMsgBoxFilter, "menuMsgBoxFilter");
-            this.menuMsgBoxFilter.Click += new System.EventHandler(this.menuMsgBoxFilter_Click);
-            // 
-            // ssMain
-            // 
-            this.ssMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            resources.ApplyResources(this.ssMain, "ssMain");
-            this.ssMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ssMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolSslInboundInfo,
-            this.toolSslBlank1,
-            this.toolSslRoutingRule,
-            this.toolSslBlank2,
-            this.toolSslServerSpeed,
-            this.toolSslBlank4});
-            this.ssMain.Name = "ssMain";
-            this.ssMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ssMain_ItemClicked);
-            // 
-            // toolSslInboundInfo
-            // 
-            this.toolSslInboundInfo.Name = "toolSslInboundInfo";
-            resources.ApplyResources(this.toolSslInboundInfo, "toolSslInboundInfo");
-            // 
-            // toolSslBlank1
-            // 
-            resources.ApplyResources(this.toolSslBlank1, "toolSslBlank1");
-            this.toolSslBlank1.Name = "toolSslBlank1";
-            this.toolSslBlank1.Spring = true;
-            // 
-            // toolSslRoutingRule
-            // 
-            this.toolSslRoutingRule.Name = "toolSslRoutingRule";
-            resources.ApplyResources(this.toolSslRoutingRule, "toolSslRoutingRule");
-            // 
-            // toolSslBlank2
-            // 
-            this.toolSslBlank2.Name = "toolSslBlank2";
-            resources.ApplyResources(this.toolSslBlank2, "toolSslBlank2");
-            this.toolSslBlank2.Spring = true;
-            // 
-            // toolSslServerSpeed
-            // 
-            resources.ApplyResources(this.toolSslServerSpeed, "toolSslServerSpeed");
-            this.toolSslServerSpeed.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolSslServerSpeed.Name = "toolSslServerSpeed";
-            // 
-            // toolSslBlank4
-            // 
-            this.toolSslBlank4.Name = "toolSslBlank4";
-            resources.ApplyResources(this.toolSslBlank4, "toolSslBlank4");
             // 
             // cmsLv
             // 
@@ -612,6 +462,161 @@
             resources.ApplyResources(this.tsbServer, "tsbServer");
             this.tsbServer.Name = "tsbServer";
             // 
+            // qrCodeControl
+            // 
+            this.qrCodeControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            resources.ApplyResources(this.qrCodeControl, "qrCodeControl");
+            this.qrCodeControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.qrCodeControl.Name = "qrCodeControl";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
+            this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.splitContainer1.Panel2.Controls.Add(this.gbMsgTitle);
+            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
+            this.splitContainer1.Panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.groupBox1.Controls.Add(this.scMain);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // gbMsgTitle
+            // 
+            this.gbMsgTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.gbMsgTitle.Controls.Add(this.txtMsgBox);
+            this.gbMsgTitle.Controls.Add(this.ssMain);
+            resources.ApplyResources(this.gbMsgTitle, "gbMsgTitle");
+            this.gbMsgTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gbMsgTitle.Name = "gbMsgTitle";
+            this.gbMsgTitle.TabStop = false;
+            // 
+            // txtMsgBox
+            // 
+            this.txtMsgBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.txtMsgBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMsgBox.ContextMenuStrip = this.cmsMsgBox;
+            resources.ApplyResources(this.txtMsgBox, "txtMsgBox");
+            this.txtMsgBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtMsgBox.Name = "txtMsgBox";
+            this.txtMsgBox.ReadOnly = true;
+            this.txtMsgBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMsgBox_KeyDown);
+            // 
+            // cmsMsgBox
+            // 
+            this.cmsMsgBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.cmsMsgBox.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsMsgBox.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuMsgBoxSelectAll,
+            this.menuMsgBoxCopy,
+            this.menuMsgBoxCopyAll,
+            this.menuMsgBoxAddRoutingRule,
+            this.menuMsgBoxFilter});
+            this.cmsMsgBox.Name = "cmsMsgBox";
+            resources.ApplyResources(this.cmsMsgBox, "cmsMsgBox");
+            // 
+            // menuMsgBoxSelectAll
+            // 
+            this.menuMsgBoxSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.menuMsgBoxSelectAll.Name = "menuMsgBoxSelectAll";
+            resources.ApplyResources(this.menuMsgBoxSelectAll, "menuMsgBoxSelectAll");
+            this.menuMsgBoxSelectAll.Click += new System.EventHandler(this.menuMsgBoxSelectAll_Click);
+            // 
+            // menuMsgBoxCopy
+            // 
+            this.menuMsgBoxCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.menuMsgBoxCopy.Name = "menuMsgBoxCopy";
+            resources.ApplyResources(this.menuMsgBoxCopy, "menuMsgBoxCopy");
+            this.menuMsgBoxCopy.Click += new System.EventHandler(this.menuMsgBoxCopy_Click);
+            // 
+            // menuMsgBoxCopyAll
+            // 
+            this.menuMsgBoxCopyAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.menuMsgBoxCopyAll.Name = "menuMsgBoxCopyAll";
+            resources.ApplyResources(this.menuMsgBoxCopyAll, "menuMsgBoxCopyAll");
+            this.menuMsgBoxCopyAll.Click += new System.EventHandler(this.menuMsgBoxCopyAll_Click);
+            // 
+            // menuMsgBoxAddRoutingRule
+            // 
+            this.menuMsgBoxAddRoutingRule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.menuMsgBoxAddRoutingRule.Name = "menuMsgBoxAddRoutingRule";
+            resources.ApplyResources(this.menuMsgBoxAddRoutingRule, "menuMsgBoxAddRoutingRule");
+            this.menuMsgBoxAddRoutingRule.Click += new System.EventHandler(this.menuMsgBoxAddRoutingRule_Click);
+            // 
+            // menuMsgBoxFilter
+            // 
+            this.menuMsgBoxFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.menuMsgBoxFilter.Name = "menuMsgBoxFilter";
+            resources.ApplyResources(this.menuMsgBoxFilter, "menuMsgBoxFilter");
+            this.menuMsgBoxFilter.Click += new System.EventHandler(this.menuMsgBoxFilter_Click);
+            // 
+            // ssMain
+            // 
+            this.ssMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            resources.ApplyResources(this.ssMain, "ssMain");
+            this.ssMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ssMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolSslInboundInfo,
+            this.toolSslBlank1,
+            this.toolSslRoutingRule,
+            this.toolSslBlank2,
+            this.toolSslServerSpeed,
+            this.toolSslBlank4});
+            this.ssMain.Name = "ssMain";
+            this.ssMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ssMain_ItemClicked);
+            // 
+            // toolSslInboundInfo
+            // 
+            this.toolSslInboundInfo.Name = "toolSslInboundInfo";
+            resources.ApplyResources(this.toolSslInboundInfo, "toolSslInboundInfo");
+            // 
+            // toolSslBlank1
+            // 
+            resources.ApplyResources(this.toolSslBlank1, "toolSslBlank1");
+            this.toolSslBlank1.Name = "toolSslBlank1";
+            this.toolSslBlank1.Spring = true;
+            // 
+            // toolSslRoutingRule
+            // 
+            this.toolSslRoutingRule.Name = "toolSslRoutingRule";
+            resources.ApplyResources(this.toolSslRoutingRule, "toolSslRoutingRule");
+            // 
+            // toolSslBlank2
+            // 
+            this.toolSslBlank2.Name = "toolSslBlank2";
+            resources.ApplyResources(this.toolSslBlank2, "toolSslBlank2");
+            this.toolSslBlank2.Spring = true;
+            // 
+            // toolSslServerSpeed
+            // 
+            resources.ApplyResources(this.toolSslServerSpeed, "toolSslServerSpeed");
+            this.toolSslServerSpeed.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolSslServerSpeed.Name = "toolSslServerSpeed";
+            // 
+            // toolSslBlank4
+            // 
+            this.toolSslBlank4.Name = "toolSslBlank4";
+            resources.ApplyResources(this.toolSslBlank4, "toolSslBlank4");
+            // 
             // notifyMain
             // 
             this.notifyMain.ContextMenuStrip = this.cmsMain;
@@ -765,6 +770,7 @@
             this.tsbSub.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbSubSetting,
             this.tsbSubUpdate});
+            this.tsbSub.ForeColor = System.Drawing.Color.Gray;
             this.tsbSub.Image = global::v2rayN.Properties.Resources.sub;
             resources.ApplyResources(this.tsbSub, "tsbSub");
             this.tsbSub.Name = "tsbSub";
@@ -784,7 +790,7 @@
             // tsbQRCodeSwitch
             // 
             this.tsbQRCodeSwitch.CheckOnClick = true;
-            this.tsbQRCodeSwitch.ForeColor = System.Drawing.Color.Black;
+            this.tsbQRCodeSwitch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tsbQRCodeSwitch.Image = global::v2rayN.Properties.Resources.share;
             resources.ApplyResources(this.tsbQRCodeSwitch, "tsbQRCodeSwitch");
             this.tsbQRCodeSwitch.Name = "tsbQRCodeSwitch";
@@ -941,7 +947,7 @@
             // 
             // tsbPromotion
             // 
-            this.tsbPromotion.ForeColor = System.Drawing.Color.Black;
+            this.tsbPromotion.ForeColor = System.Drawing.Color.Gray;
             this.tsbPromotion.Image = global::v2rayN.Properties.Resources.promotion;
             resources.ApplyResources(this.tsbPromotion, "tsbPromotion");
             this.tsbPromotion.Name = "tsbPromotion";
@@ -958,52 +964,34 @@
             this.tsbClose.Name = "tsbClose";
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
-            // materialDrawer1
+            // materialCard1
             // 
-            this.materialDrawer1.AutoHide = false;
-            this.materialDrawer1.AutoShow = false;
-            this.materialDrawer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDrawer1.BackgroundWithAccent = false;
-            this.materialDrawer1.BaseTabControl = null;
-            this.materialDrawer1.Depth = 0;
-            this.materialDrawer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDrawer1.HighlightWithAccent = true;
-            this.materialDrawer1.IndicatorWidth = 0;
-            this.materialDrawer1.IsOpen = false;
-            resources.ApplyResources(this.materialDrawer1, "materialDrawer1");
-            this.materialDrawer1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDrawer1.Name = "materialDrawer1";
-            this.materialDrawer1.ShowIconsWhenHidden = false;
-            this.materialDrawer1.UseColors = false;
+            resources.ApplyResources(this.materialCard1, "materialCard1");
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialSwitch1);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
             // 
-            // materialComboBox1
+            // materialSwitch1
             // 
-            this.materialComboBox1.AutoResize = true;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 174;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 132;
-            resources.ApplyResources(this.materialComboBox1, "materialComboBox1");
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.Items.AddRange(new object[] {
-            resources.GetString("materialComboBox1.Items"),
-            resources.GetString("materialComboBox1.Items1"),
-            resources.GetString("materialComboBox1.Items2"),
-            resources.GetString("materialComboBox1.Items3")});
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.SelectedIndexChanged += new System.EventHandler(this.materialComboBox1_SelectedIndexChanged);
+            resources.ApplyResources(this.materialSwitch1, "materialSwitch1");
+            this.materialSwitch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.materialSwitch1.Depth = 0;
+            this.materialSwitch1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialSwitch1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialSwitch1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSwitch1.Name = "materialSwitch1";
+            this.materialSwitch1.Ripple = true;
+            this.materialSwitch1.UseVisualStyleBackColor = false;
+            this.materialSwitch1.CheckedChanged += new System.EventHandler(this.materialSwitch1_CheckedChanged);
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.materialComboBox1);
-            this.Controls.Add(this.materialDrawer1);
+            this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tsMain);
@@ -1019,6 +1007,7 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
+            this.cmsLv.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -1029,10 +1018,11 @@
             this.cmsMsgBox.ResumeLayout(false);
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
-            this.cmsLv.ResumeLayout(false);
             this.cmsMain.ResumeLayout(false);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1141,9 +1131,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolSslRoutingRule;
         private System.Windows.Forms.ToolStripStatusLabel toolSslBlank2;
         private System.Windows.Forms.ToolStripComboBox menuServers2;
-        private MaterialSkin.Controls.MaterialDrawer materialDrawer1;
         private MaterialSkin.Controls.MaterialListView lvServers;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
     }
 }
 

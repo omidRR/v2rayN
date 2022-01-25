@@ -35,7 +35,6 @@ namespace v2rayN.Forms
                 txtRemarks.Text = subItem.remarks.ToString();
                 txtUrl.Text = subItem.url.ToString();
                 chkEnabled.Checked = subItem.enabled;
-                txtUserAgent.Text = subItem.userAgent;
             }
         }
         private void EndBindingSub()
@@ -45,7 +44,6 @@ namespace v2rayN.Forms
                 subItem.remarks = txtRemarks.Text.TrimEx();
                 subItem.url = txtUrl.Text.TrimEx();
                 subItem.enabled = chkEnabled.Checked;
-                subItem.userAgent = txtUserAgent.Text.TrimEx();
             }
         }
         private void txtRemarks_Leave(object sender, EventArgs e)

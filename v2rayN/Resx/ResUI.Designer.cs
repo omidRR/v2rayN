@@ -47,8 +47,8 @@ namespace v2rayN.Resx {
         }
         
         /// <summary>
-        ///   重写当前线程的 CurrentUICulture 属性，对
-        ///   使用此强类型资源类的所有资源查找执行重写。
+        ///   重写当前线程的 CurrentUICulture 属性
+        ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -183,6 +183,15 @@ namespace v2rayN.Resx {
         internal static string FailedReadConfiguration {
             get {
                 return ResourceManager.GetString("FailedReadConfiguration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please fill in the correct format extra ID 的本地化字符串。
+        /// </summary>
+        internal static string FillCorrectAlterId {
+            get {
+                return ResourceManager.GetString("FillCorrectAlterId", resourceCulture);
             }
         }
         
@@ -390,15 +399,6 @@ namespace v2rayN.Resx {
         internal static string LvTestResults {
             get {
                 return ResourceManager.GetString("LvTestResults", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 TLS 的本地化字符串。
-        /// </summary>
-        internal static string LvTLS {
-            get {
-                return ResourceManager.GetString("LvTLS", resourceCulture);
             }
         }
         

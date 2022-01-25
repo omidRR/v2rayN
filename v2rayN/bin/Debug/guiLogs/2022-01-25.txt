@@ -87,3 +87,9 @@
 2022-01-25 14:31:26,859 [1] INFO  Log1 - v2rayN start up | v2rayN - V4.29 - 1400/11/05 | C:\Users\omidR\Desktop\v2rayN-master\v2rayN-master\v2rayN\v2rayN\bin\Debug\v2rayN.exe
 2022-01-25 14:31:27,755 [3] INFO  Log1 - UpdateTaskRun
 2022-01-25 14:32:27,760 [3] INFO  Log1 - UpdateTaskRun
+2022-01-25 15:10:12,937 [1] INFO  Log1 - v2rayN start up | v2rayN - V4.29 - 1400/11/05 | C:\Users\omidR\Desktop\v2rayN.edited.by.omidrr\v2rayN\bin\Debug\v2rayN.exe
+2022-01-25 15:10:13,417 [3] INFO  Log1 - UpdateTaskRun
+2022-01-25 15:10:44,039 [1] INFO  Log1 - v2rayN start up | v2rayN - V4.29 - 1400/11/05 | C:\Users\omidR\Desktop\v2rayN.edited.by.omidrr\v2rayN\bin\Debug\v2rayN.exe
+2022-01-25 15:10:44,511 [3] INFO  Log1 - UpdateTaskRun
+2022-01-25 15:13:50,789 [1] INFO  Log1 - v2rayN start up | v2rayN - V4.29 - 1400/11/05 | C:\Users\omidR\Desktop\v2rayN.edited.by.omidrr\v2rayN\bin\Debug\v2rayN.exe
+2022-01-25 15:13:51,752 [3] INFO  Log1 - UpdateTaskRun

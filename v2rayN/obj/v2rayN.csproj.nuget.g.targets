@@ -4,7 +4,7 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)grpc.tools\2.43.0\build\Grpc.Tools.targets" Condition="Exists('$(NuGetPackageRoot)grpc.tools\2.43.0\build\Grpc.Tools.targets')" />
-    <Import Project="$(NuGetPackageRoot)grpc.core\2.43.0\buildTransitive\net45\Grpc.Core.targets" Condition="Exists('$(NuGetPackageRoot)grpc.core\2.43.0\buildTransitive\net45\Grpc.Core.targets')" />
+    <Import Project="$(NuGetPackageRoot)grpc.tools\2.43.0-pre1\build\Grpc.Tools.targets" Condition="Exists('$(NuGetPackageRoot)grpc.tools\2.43.0-pre1\build\Grpc.Tools.targets')" />
+    <Import Project="$(NuGetPackageRoot)grpc.core\2.43.0-pre1\buildTransitive\net45\Grpc.Core.targets" Condition="Exists('$(NuGetPackageRoot)grpc.core\2.43.0-pre1\buildTransitive\net45\Grpc.Core.targets')" />
   </ImportGroup>
 </Project>

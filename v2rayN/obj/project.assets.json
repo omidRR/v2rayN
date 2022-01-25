@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
-      "Google.Protobuf/3.19.3": {
+      "Google.Protobuf/3.19.1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -14,10 +14,10 @@
           "lib/net45/Google.Protobuf.dll": {}
         }
       },
-      "Grpc.Core/2.43.0": {
+      "Grpc.Core/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core.Api": "2.43.0",
+          "Grpc.Core.Api": "2.43.0-pre1",
           "System.Memory": "4.5.3"
         },
         "frameworkAssemblies": [
@@ -56,7 +56,7 @@
           }
         }
       },
-      "Grpc.Core.Api/2.43.0": {
+      "Grpc.Core.Api/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -72,7 +72,7 @@
           "lib/net45/Grpc.Core.Api.dll": {}
         }
       },
-      "Grpc.Tools/2.43.0": {
+      "Grpc.Tools/2.43.0-pre1": {
         "type": "package",
         "build": {
           "build/Grpc.Tools.props": {},
@@ -171,7 +171,7 @@
       }
     },
     ".NETFramework,Version=v4.8/win": {
-      "Google.Protobuf/3.19.3": {
+      "Google.Protobuf/3.19.1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -183,10 +183,10 @@
           "lib/net45/Google.Protobuf.dll": {}
         }
       },
-      "Grpc.Core/2.43.0": {
+      "Grpc.Core/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core.Api": "2.43.0",
+          "Grpc.Core.Api": "2.43.0-pre1",
           "System.Memory": "4.5.3"
         },
         "frameworkAssemblies": [
@@ -203,7 +203,7 @@
           "buildTransitive/net45/Grpc.Core.targets": {}
         }
       },
-      "Grpc.Core.Api/2.43.0": {
+      "Grpc.Core.Api/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -219,7 +219,7 @@
           "lib/net45/Grpc.Core.Api.dll": {}
         }
       },
-      "Grpc.Tools/2.43.0": {
+      "Grpc.Tools/2.43.0-pre1": {
         "type": "package",
         "build": {
           "build/Grpc.Tools.props": {},
@@ -318,7 +318,7 @@
       }
     },
     ".NETFramework,Version=v4.8/win-x64": {
-      "Google.Protobuf/3.19.3": {
+      "Google.Protobuf/3.19.1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -330,10 +330,10 @@
           "lib/net45/Google.Protobuf.dll": {}
         }
       },
-      "Grpc.Core/2.43.0": {
+      "Grpc.Core/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core.Api": "2.43.0",
+          "Grpc.Core.Api": "2.43.0-pre1",
           "System.Memory": "4.5.3"
         },
         "frameworkAssemblies": [
@@ -353,7 +353,7 @@
           "buildTransitive/net45/Grpc.Core.targets": {}
         }
       },
-      "Grpc.Core.Api/2.43.0": {
+      "Grpc.Core.Api/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -369,7 +369,7 @@
           "lib/net45/Grpc.Core.Api.dll": {}
         }
       },
-      "Grpc.Tools/2.43.0": {
+      "Grpc.Tools/2.43.0-pre1": {
         "type": "package",
         "build": {
           "build/Grpc.Tools.props": {},
@@ -468,7 +468,7 @@
       }
     },
     ".NETFramework,Version=v4.8/win-x86": {
-      "Google.Protobuf/3.19.3": {
+      "Google.Protobuf/3.19.1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -480,10 +480,10 @@
           "lib/net45/Google.Protobuf.dll": {}
         }
       },
-      "Grpc.Core/2.43.0": {
+      "Grpc.Core/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core.Api": "2.43.0",
+          "Grpc.Core.Api": "2.43.0-pre1",
           "System.Memory": "4.5.3"
         },
         "frameworkAssemblies": [
@@ -503,7 +503,7 @@
           "buildTransitive/net45/Grpc.Core.targets": {}
         }
       },
-      "Grpc.Core.Api/2.43.0": {
+      "Grpc.Core.Api/2.43.0-pre1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -519,7 +519,7 @@
           "lib/net45/Grpc.Core.Api.dll": {}
         }
       },
-      "Grpc.Tools/2.43.0": {
+      "Grpc.Tools/2.43.0-pre1": {
         "type": "package",
         "build": {
           "build/Grpc.Tools.props": {},
@@ -619,14 +619,14 @@
     }
   },
   "libraries": {
-    "Google.Protobuf/3.19.3": {
-      "sha512": "/C209W6RtwvtG1MoNNjoOMdlnCjVi8k3gFn90DO3O7kYoH3O345jZkJMYaJmddYIm7ROZC25sEAKHJPt3XZOog==",
+    "Google.Protobuf/3.19.1": {
+      "sha512": "M6yun2BPdHkBjD3V14muZSt72azWHRJEx88ME2TyyH2+/ww6R3hIptjBFQQtO6pmkfLXW/NGQ4hADWSa9AmK2A==",
       "type": "package",
-      "path": "google.protobuf/3.19.3",
+      "path": "google.protobuf/3.19.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "google.protobuf.3.19.3.nupkg.sha512",
+        "google.protobuf.3.19.1.nupkg.sha512",
         "google.protobuf.nuspec",
         "lib/net45/Google.Protobuf.dll",
         "lib/net45/Google.Protobuf.pdb",
@@ -642,16 +642,16 @@
         "lib/netstandard2.0/Google.Protobuf.xml"
       ]
     },
-    "Grpc.Core/2.43.0": {
-      "sha512": "oiDfTGcT7QjT6KN5men+ISYwmgmMn4LiJfV6Q4LrCoB722IezWfG2ccNR1Af3uzmJSCUbgYqJcbjfmIZfR/k4Q==",
+    "Grpc.Core/2.43.0-pre1": {
+      "sha512": "YyoHbqIcY2UwqkcfYonf7ZgbeJs4MF+M3Tk/+L+5+8L1Swz8LjYwjIwEw3EgPYPygUDv2BlrBYsVt6XSP0lgAA==",
       "type": "package",
-      "path": "grpc.core/2.43.0",
+      "path": "grpc.core/2.43.0-pre1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/net45/Grpc.Core.targets",
         "buildTransitive/net45/Grpc.Core.targets",
-        "grpc.core.2.43.0.nupkg.sha512",
+        "grpc.core.2.43.0-pre1.nupkg.sha512",
         "grpc.core.nuspec",
         "lib/net45/Grpc.Core.dll",
         "lib/net45/Grpc.Core.pdb",
@@ -670,14 +670,14 @@
         "runtimes/win-x86/native/grpc_csharp_ext.x86.dll"
       ]
     },
-    "Grpc.Core.Api/2.43.0": {
-      "sha512": "mikPMVE2I1AaNde1JQvR3ud8HsUmpeA4blqTt4SfCnDSNVN1GCd2UUEZsiID4MRPUzXwflMYl7/HhFytb6d+Ww==",
+    "Grpc.Core.Api/2.43.0-pre1": {
+      "sha512": "zfxscHbNGJVpIDFUeGxRehHDvM++8mofWicRs7vBFJaGGTRojG6ihlIh2dBSwCuiN2OQNfdJ8Bjip4baQlQhzw==",
       "type": "package",
-      "path": "grpc.core.api/2.43.0",
+      "path": "grpc.core.api/2.43.0-pre1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "grpc.core.api.2.43.0.nupkg.sha512",
+        "grpc.core.api.2.43.0-pre1.nupkg.sha512",
         "grpc.core.api.nuspec",
         "lib/net45/Grpc.Core.Api.dll",
         "lib/net45/Grpc.Core.Api.pdb",
@@ -691,10 +691,10 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Tools/2.43.0": {
-      "sha512": "JRcG4VqrDE2P+QxKpTk+9BU2ZjHxTZ2oecd5auWa3ViWCCVZY/MZuGcLXj8DjSBS8sDpk6vQXrsjw8nIyoRMNw==",
+    "Grpc.Tools/2.43.0-pre1": {
+      "sha512": "mK2NYCZ4t3wJzIVj6stOG3JhBqvxk27slBff34RZqSljRKO2G5TXw5JBwYpzESKj2Lg1cq5PpXdTHgFPTieQiQ==",
       "type": "package",
-      "path": "grpc.tools/2.43.0",
+      "path": "grpc.tools/2.43.0-pre1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -723,7 +723,7 @@
         "build/native/include/google/protobuf/timestamp.proto",
         "build/native/include/google/protobuf/type.proto",
         "build/native/include/google/protobuf/wrappers.proto",
-        "grpc.tools.2.43.0.nupkg.sha512",
+        "grpc.tools.2.43.0-pre1.nupkg.sha512",
         "grpc.tools.nuspec",
         "packageIcon.png",
         "tools/linux_arm64/grpc_csharp_plugin",
@@ -1010,9 +1010,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
-      "Google.Protobuf >= 3.19.3",
-      "Grpc.Core >= 2.43.0",
-      "Grpc.Tools >= 2.43.0",
+      "Google.Protobuf >= 3.19.1",
+      "Grpc.Core >= 2.43.0-pre1",
+      "Grpc.Tools >= 2.43.0-pre1",
       "MaterialSkin.2 >= 2.3.1",
       "Newtonsoft.Json >= 13.0.1",
       "ZXing.Net >= 0.16.7",
@@ -1027,11 +1027,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\v2rayN.csproj",
+      "projectUniqueName": "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.omidrr\\v2rayN\\v2rayN.csproj",
       "projectName": "v2rayN",
-      "projectPath": "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\v2rayN.csproj",
+      "projectPath": "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.omidrr\\v2rayN\\v2rayN.csproj",
       "packagesPath": "C:\\Users\\omidR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\omidR\\Desktop\\v2rayN-master\\v2rayN-master\\v2rayN\\v2rayN\\obj\\",
+      "outputPath": "C:\\Users\\omidR\\Desktop\\v2rayN.edited.by.omidrr\\v2rayN\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1062,17 +1062,17 @@
         "dependencies": {
           "Google.Protobuf": {
             "target": "Package",
-            "version": "[3.19.3, )"
+            "version": "[3.19.1, )"
           },
           "Grpc.Core": {
             "target": "Package",
-            "version": "[2.43.0, )"
+            "version": "[2.43.0-pre1, )"
           },
           "Grpc.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.43.0, )"
+            "version": "[2.43.0-pre1, )"
           },
           "MaterialSkin.2": {
             "target": "Package",

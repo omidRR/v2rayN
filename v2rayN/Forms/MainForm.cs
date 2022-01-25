@@ -10,6 +10,7 @@ using v2rayN.Base;
 using v2rayN.Tool;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using MaterialSkin;
@@ -33,13 +34,12 @@ namespace v2rayN.Forms
             HideForm();
             this.Text = Utils.GetVersion();
             Global.processJob = new Job();
-
             Application.ApplicationExit += (sender, args) =>
             {
                 MyAppExit(false);
             };
         }
-      
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (ConfigHandler.LoadConfig(ref config) != 0)
@@ -203,7 +203,6 @@ namespace v2rayN.Forms
             lvServers.Columns.Add(UIRes.I18N("LvPort"), 50);
             lvServers.Columns.Add(UIRes.I18N("LvEncryptionMethod"), 90);
             lvServers.Columns.Add(UIRes.I18N("LvTransportProtocol"), 70);
-            lvServers.Columns.Add(UIRes.I18N("LvTLS"), 70);
             lvServers.Columns.Add(UIRes.I18N("LvSubscription"), 50);
             lvServers.Columns.Add(UIRes.I18N("LvTestResults"), 70, HorizontalAlignment.Right);
 
@@ -260,7 +259,6 @@ namespace v2rayN.Forms
                 Utils.AddSubItem(lvItem, EServerColName.port.ToString(), item.port.ToString());
                 Utils.AddSubItem(lvItem, EServerColName.security.ToString(), item.security);
                 Utils.AddSubItem(lvItem, EServerColName.network.ToString(), item.network);
-                Utils.AddSubItem(lvItem, EServerColName.streamSecurity.ToString(), item.streamSecurity);
                 Utils.AddSubItem(lvItem, EServerColName.subRemarks.ToString(), item.getSubRemarks(config));
                 Utils.AddSubItem(lvItem, EServerColName.testResult.ToString(), item.testResult);
                 if (stats)
@@ -1012,14 +1010,15 @@ namespace v2rayN.Forms
             {
                 if (msg.Contains("Successful"))
                 {
-                    notifyMain.Text = "Successfully configured";
+                     notifyMain.Text = "Successfully configured";
                 }
-
+               
             }
-            else if (msg.Length <= 63)
+            else if (msg.Length<=63)
             {
                 notifyMain.Text = msg;
             }
+            
         }
 
         #endregion
@@ -1538,40 +1537,23 @@ namespace v2rayN.Forms
                 gbMsgTitle.Text = string.Format(UIRes.I18N("MsgInformationTitle"), MsgFilter);
             }
         }
-
-
         #endregion
 
-        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void materialSwitch1_CheckedChanged(object sender, EventArgs e)
         {
-            if (materialComboBox1.Text.Contains("BLUE"))
-            {
-                SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                SkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.Pink900,
-                    Accent.Blue700, TextShade.WHITE);
-                Load += this.MainForm_Load ;
-            }
-
-            if (materialComboBox1.Text.Contains("DARK MODE"))
+            if (materialSwitch1.Checked)
             {
                 SkinManager.Theme = MaterialSkinManager.Themes.DARK;
                 SkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.DeepOrange800, Primary.Pink900,
                     Accent.Orange700, TextShade.WHITE);
-                Load += this.MainForm_Load;
             }
-            if (materialComboBox1.Text.Contains("ORANGE"))
+
+            if (materialSwitch1.Checked == false)
             {
                 SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
                 MaterialSkinManager.Instance.ColorScheme = new ColorScheme(Color.Tomato, Color.Tomato,
                     Color.GreenYellow, Color.Chocolate, TextShade.WHITE);
-                Load += this.MainForm_Load;
-            }
-            if (materialComboBox1.Text.Contains("GREEN"))
-            {
-                SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                MaterialSkinManager.Instance.ColorScheme = new ColorScheme(Color.Green, Color.Green,
-                    Color.GreenYellow, Color.Chocolate, TextShade.WHITE);
-                Load += this.MainForm_Load;
+
             }
         }
     }
